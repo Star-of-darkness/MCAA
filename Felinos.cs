@@ -1,0 +1,30 @@
+using System;
+
+namespace SistemaFelinos
+{
+    public class Felinos
+    {
+        public int Id { get; set; }
+        public string Nome { get; set; }
+        public string Raça { get; set; }
+        public string Pelagem { get; set; }
+        public int Idade { get; set; }
+
+        public Felinos()
+        {
+        }
+
+        public Felinos(string nome, string raça, string pelagem, int idade)
+        {
+            Nome = nome;
+            Raça = raça;
+            Pelagem = pelagem;
+            Idade = idade;
+        }
+
+        public override string ToString()
+        {
+            return $"ID: {Id} | Nome: {Nome} | Raça: {Raça} | Pelagem: {Pelagem} | Idade: {Idade} anos";
+        }
+    }
+}
