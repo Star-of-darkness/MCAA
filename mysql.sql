@@ -1,0 +1,11 @@
+CREATE DATABASE petshop;
+
+USE petshop;
+
+CREATE TABLE felinos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    raca VARCHAR(100) NOT NULL,
+    pelagem VARCHAR(100) NOT NULL,
+    idade INT NOT NULL
+);
