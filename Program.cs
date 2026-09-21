@@ -74,38 +74,42 @@ namespace SistemaFelinos
             Console.WriteLine("5 - Excluir gato");
             Console.WriteLine("0 - Sair");
             Console.WriteLine();
+            // Pede para o usuário escolher uma opção
             Console.Write("Escolha uma opção: ");
         }
-
+// Essa função serve para cadastrar um novo gato
         static void CadastrarGato()
         {
             Console.WriteLine("\n o:< Cadastrar Gato >:o");
-
+// Pede o nome do gato
             Console.Write("Nome: ");
+            // Guarda o nome que o usuário digitou na variável nome
             string nome = Console.ReadLine();
-
+// Pede a raça
             Console.Write("Raça: ");
             string raça = Console.ReadLine();
-
+// Pede a pelagem
             Console.Write("Pelagem: ");
             string pelagem = Console.ReadLine();
-
+// Pede a idade do gato
             Console.Write("Idade: ");
-
+// Aqui o programa verifica se a idade digitada é um número válido
             if (int.TryParse(Console.ReadLine(), out int idade))
             {
+                // Aqui cria um objeto com as informações do gato
                 Felinos gato = new Felinos(nome, raça, pelagem, idade);
 
                 banco.Cadastrar(gato);
-
+// Mostra uma mensagem dizendo que o cadastro deu certo
                 Console.WriteLine("\nGato cadastrado com sucesso!");
             }
             else
             {
+                // Mostra que o cadastro foi cancelado
                 Console.WriteLine("\nIdade inválida. Cadastro cancelado.");
             }
         }
-
+// Essa função serve para mostrar todos os gatos cadastrados
         static void ListarGatos()
         {
             Console.WriteLine("\n-_- Lista de Gatos -_-");
