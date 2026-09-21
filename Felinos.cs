@@ -13,7 +13,7 @@ namespace SistemaFelinos
         public Felinos()
         {
         }
-
+//parametros do construtor
         public Felinos(string nome, string raça, string pelagem, int idade)
         {
             Nome = nome;
