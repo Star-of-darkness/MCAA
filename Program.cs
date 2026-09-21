@@ -3,20 +3,19 @@ using System;
 namespace SistemaFelinos
 {
     class Program
-    {
-        static Banco banco = new Banco();
-
+    {//aqui ja começamos a juntar o msql no c#
+        static Banco banco = new Banco();//ponto de entrada do programa
         static void Main(string[] args)
         {
             int opcao = -1;
-
+//Enquanto a opção for diferente de 0, continue executando
             while (opcao != 0)
             {
                 ExibirMenu();
-
+// serve +ou- como um true e false, todos eles juntos vão basicamente pegar o numero, converter ele pra...numero e jogar no menu
                 if (int.TryParse(Console.ReadLine(), out opcao))
                 {
-                    switch (opcao)
+                    switch (opcao)//serve pra verificar o o que esta dentro da (opção) 
                     {
                         case 1:
                             CadastrarGato();
@@ -56,12 +55,12 @@ namespace SistemaFelinos
                 if (opcao != 0)
                 {
                     Console.WriteLine("\nPressione qualquer tecla para continuar...");
-                    Console.ReadKey();
+                    Console.ReadKey();//vai ler e execultar no  menu
                     Console.Clear();
                 }
             }
         }
-
+// ceci
         static void ExibirMenu()
         {
             Console.WriteLine("           PETSHOP RONRONS");
