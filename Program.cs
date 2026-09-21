@@ -60,10 +60,12 @@ namespace SistemaFelinos
                 }
             }
         }
-// ceci
+// ceciiii
+        // Essa função mostra o menu principal do Petshop
         static void ExibirMenu()
         {
-            Console.WriteLine("           PETSHOP RONRONS");
+            // Mostra o nome do sistema na tela
+            Console.WriteLine("  PETSHOP RONRONS  ");
             Console.WriteLine();
             Console.WriteLine("1 - Cadastrar gato");
             Console.WriteLine("2 - Listar gatos");
