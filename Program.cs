@@ -115,7 +115,7 @@ namespace SistemaFelinos
             Console.WriteLine("\n-_- Lista de Gatos -_-");
 
             var gatos = banco.Listar();
-
+// Verifica se a lista está vazia
             if (gatos.Count == 0)
             {
                 Console.WriteLine("Nenhum gato cadastrado.");
@@ -124,16 +124,17 @@ namespace SistemaFelinos
 
             foreach (Felinos gato in gatos)
             {
+                // Essa função consulta o banco e mostra todos os gatos cadastrados
                 Console.WriteLine(gato);
             }
         }
-
+// Essa função serve para buscar um gato específico pelo ID
         static void BuscarGato()
         {
             Console.WriteLine("\n d:< Buscar Gato >:P");
 
             Console.Write("Digite o ID do gato: ");
-
+// Verifica se o ID digitado é realmente um número
             if (!int.TryParse(Console.ReadLine(), out int id))
             {
                 Console.WriteLine("ID inválido.");
@@ -144,28 +145,30 @@ namespace SistemaFelinos
 
             if (gato == null)
             {
+                // Mostra que o gato não foi encontrado
                 Console.WriteLine("Gato não encontrado.");
                 return;
             }
 
             Console.WriteLine("\nGato encontrado:");
+            // Se encontrou, mostra os dados do gato
             Console.WriteLine(gato);
         }
-
+// Essa função serve para alterar os dados de um gato já cadastrado
         static void AtualizarGato()
         {
             Console.WriteLine("\n -_- Atualizar Gato -_-");
 
             Console.Write("Digite o ID do gato que deseja atualizar: ");
-
+// Verifica se o ID digitado é válido
             if (!int.TryParse(Console.ReadLine(), out int id))
             {
                 Console.WriteLine("ID inválido.");
                 return;
             }
-
+// Procura o gato no banco
             Felinos gato = banco.Buscar(id);
-
+// Verifica se o gato existe se não existir, mostra se não existir, mostra: Gato não encontrado.
             if (gato == null)
             {
                 Console.WriteLine("Gato não encontrado.");
@@ -173,6 +176,7 @@ namespace SistemaFelinos
             }
 
             Console.WriteLine("\nGato atual:");
+            // Mostra os dados atuais do gato antes de alterar
             Console.WriteLine(gato);
 
             Console.Write("\nNovo nome: ");
@@ -196,18 +200,18 @@ namespace SistemaFelinos
             gato.Raça = raça;
             gato.Pelagem = pelagem;
             gato.Idade = idade;
-
+// Envia o gato atualizado para o banco de dados
             banco.Atualizar(gato);
-
+// Mostra que a atualização deu certo
             Console.WriteLine("\nGato atualizado com sucesso eeeeeee >:D");
         }
-
+// Essa função serve para excluir um gato do banco de dados
         static void ExcluirGato()
         {
             Console.WriteLine("\n d: Excluir Gato :P");
-
+// Pede o ID do gato que será excluído
             Console.Write("Digite o ID do gato que deseja excluir: ");
-
+// Verifica se o ID digitado é um número
             if (!int.TryParse(Console.ReadLine(), out int id))
             {
                 Console.WriteLine("ID inválido.");
@@ -215,7 +219,7 @@ namespace SistemaFelinos
             }
 
             Felinos gato = banco.Buscar(id);
-
+// Verifica se o gato existe. Se não existir: Gato não achado.
             if (gato == null)
             {
                 Console.WriteLine("Gato não achado");
@@ -223,6 +227,7 @@ namespace SistemaFelinos
             }
 
             Console.WriteLine("\nGato encontrado:");
+            // Mostra o gato que será excluído
             Console.WriteLine(gato);
 
             Console.Write("\nTem certeza que deseja excluir? (s/n): ");
@@ -230,6 +235,7 @@ namespace SistemaFelinos
 
             if (resposta.ToLower() == "s")
             {
+                // Exclui o gato do banco de dados
                 banco.Excluir(id);
 
                 Console.WriteLine("Gato excluído com sucesso!");
