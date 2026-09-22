@@ -4,7 +4,7 @@ Integrantes: Cecília, Maria Julia e Ana Laura
 
 Banco de dados utilizado: MYSQL
 
-Biblioteca/driver utilizado: Felinos
+Biblioteca/driver utilizado: MySqlConnector (ADO.NET)
 
 Como instalar as dependências: 
 
