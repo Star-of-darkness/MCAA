@@ -7,7 +7,7 @@ namespace SistemaFelinos
     public class Banco
     {
         private string conexao =
-            "Server=127.0.0;Database=petshop;User ID=root;Password=Senac2026;";
+            "Server=localhost;Database=petshop;User ID=root;Password=Senac2026;";
 
         public void Cadastrar(Felinos gato)
         {
