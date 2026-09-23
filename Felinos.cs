@@ -1,6 +1,6 @@
 using System;
 
-namespace SistemaFelinos// aqui a gente ja começa o nome do coiso aqui
+namespace SistemaFelinos// aqui a gente ja começa organizando o nome do coiso aqui
 {
     public class Felinos
     {
