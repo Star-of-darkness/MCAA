@@ -168,7 +168,7 @@ namespace SistemaFelinos
             }
 // Procura o gato no banco
             Felinos gato = banco.Buscar(id);
-// Verifica se o gato existe se não existir, mostra se não existir, mostra: Gato não encontrado.
+// Verifica se o gato existe se não existir mostra: Gato não encontrado.
             if (gato == null)
             {
                 Console.WriteLine("Gato não encontrado.");
@@ -217,7 +217,7 @@ namespace SistemaFelinos
                 Console.WriteLine("ID inválido.");
                 return;
             }
-
+// Procura o gato pelo ID
             Felinos gato = banco.Buscar(id);
 // Verifica se o gato existe. Se não existir: Gato não achado.
             if (gato == null)
